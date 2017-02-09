@@ -1,0 +1,17 @@
+{% extends 'todoapp/base.html' %}
+
+{%  block content %}
+{%  if error %}
+<div class="alert alert-warning">
+  <strong>Error </strong> {{error}}
+</div>
+{% endif %}
+  <h1>Signup </h1>
+  <form action="/signup" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="enter user name">
+    <input type="email" name="email" placeholder="enter email">
+    <input type="password" name="password" placeholder="enter password">
+    <input type="submit">
+  </form>
+{%  endblock %}
